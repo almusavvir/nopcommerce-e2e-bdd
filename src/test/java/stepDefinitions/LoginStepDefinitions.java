@@ -5,8 +5,11 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.Assert;
 import pageObjects.LoginPage;
+
+import java.net.SocketException;
 
 public class LoginStepDefinitions {
 
@@ -16,6 +19,13 @@ public class LoginStepDefinitions {
     @Given("User launches Chrome browser")
     public void user_launches_chrome_browser() {
         driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        lp = new LoginPage(driver);
+    }
+
+    @Given("User launches Edge browser")
+    public void user_launches_edge_browser() {
+        driver = new EdgeDriver();
         driver.manage().window().maximize();
         lp = new LoginPage(driver);
     }
@@ -47,13 +57,13 @@ public class LoginStepDefinitions {
     }
 
     @When("User clicks on Logout link")
-    public void user_clicks_on_logout_link() throws InterruptedException {
+    public void user_clicks_on_logout_link() throws InterruptedException, SocketException {
         lp.clickLogoutBtn();
     }
 
     @Then("Close Browser")
     public void close_browser() {
-        driver.close();
+        //driver.close();
         driver.quit();
     }
 }

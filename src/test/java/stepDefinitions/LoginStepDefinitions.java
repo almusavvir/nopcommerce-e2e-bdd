@@ -6,7 +6,7 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
-import org.testng.Assert;
+import org.junit.Assert;
 import pageObjects.LoginPage;
 
 import java.net.SocketException;

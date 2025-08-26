@@ -1,5 +1,6 @@
 Feature: Login
 
+@sanity
 Scenario: Successful Login with Valid Credentials
 
 Given User launches Chrome browser
@@ -11,9 +12,10 @@ Given User launches Chrome browser
   Then Page Title should be "nopCommerce demo store. Login"
   And Close Browser
 
+  @smoke
   Scenario Outline: Successful Login with Valid Credentials
 
-    Given User launches Edge browser
+    Given User launches Chrome browser
     When user opens URL "<url>"
     And user enters Email as "<email>" and Password as "<password>"
     And Clicks on Login

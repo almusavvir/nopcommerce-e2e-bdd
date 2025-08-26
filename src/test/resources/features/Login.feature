@@ -1,6 +1,6 @@
 Feature: Login
 
-@sanity
+@sanity @smoke @hardlogin
 Scenario: Successful Login with Valid Credentials
 
 Given User launches Chrome browser

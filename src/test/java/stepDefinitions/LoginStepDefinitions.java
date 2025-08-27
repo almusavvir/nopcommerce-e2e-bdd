@@ -53,6 +53,7 @@ public class LoginStepDefinitions {
             Assert.assertTrue(true); // pass
         } else {
             Assert.assertTrue(false);
+            driver.quit();
         }
     }
 

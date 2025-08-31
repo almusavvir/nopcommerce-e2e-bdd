@@ -21,7 +21,7 @@
                     <!-- Ensure JUnit runner is detected -->
                     <includes>
                         <include>**/CucumberRunnerTest.java</include>
-                    </includes><argLine>-javaagent:"${com.browserstack:browserstack-java-sdk:jar}"</argLine>
+                    </includes>
                 </configuration>
             </plugin>
             <plugin>
@@ -36,9 +36,37 @@
           </execution>
         </executions>
       </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.0</version>
+            </plugin>
+            <plugin>
+                <groupId>com.qmetry</groupId>
+                <artifactId>automation</artifactId>
+                <version>2.0.12</version>
+                <executions>
+                    <execution>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>CucumberFileUpload</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
-
+    <pluginRepositories>
+        <pluginRepository>
+            <id>qmetrytestmanager-mvn-repo</id>
+            <name>QMetry Test Manager Maven Repository</name>
+            <url>https://raw.github.com/qmetry/qtm4j-maven-uploader/mvn-repo/</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </releases>
+        </pluginRepository>
+    </pluginRepositories>
     <dependencies>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -67,11 +95,23 @@
             <version>7.27.2</version>
             <scope>test</scope>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>io.qameta.allure</groupId>-->
+<!--            <artifactId>allure-bom</artifactId>-->
+<!--            <version>2.34.1</version>-->
+<!--            <type>pom</type>-->
+<!--            <scope>import</scope>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-cucumber7-jvm</artifactId>
             <version>2.29.1</version>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>io.qameta.allure</groupId>-->
+<!--            <artifactId>allure-junit-platform</artifactId>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
 <dependency>
       <groupId>com.browserstack</groupId>
       <artifactId>browserstack-java-sdk</artifactId>

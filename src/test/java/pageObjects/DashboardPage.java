@@ -11,29 +11,17 @@ public class DashboardPage extends BasePage {
     public DashboardPage(WebDriver driver) { super(driver);}
 
     //locators
-    @FindBy(xpath = "//input[@id='Email']")
-    WebElement customerMainMenuItem;
-    @FindBy(xpath = "//input[@id='Password']")
-    WebElement customerSubMenuItem;
-    @FindBy(xpath = "//button[normalize-space()='Log in']")
-    WebElement ;
-    @FindBy(linkText = "Logout")
-    WebElement btnLogout;
+    @FindBy (xpath = "//body/div[@class='wrapper']/aside[@class='main-sidebar sidebar-dark-primary elevation-4']/div[@class='sidebar']/nav[@class='mt-2']/ul[@role='menu']/li[@class='nav-item has-treeview menu-open']/a[1]")
+    WebElement CustomerHamburgerMenu;
+    @FindBy (xpath = "//a[@href='/Admin/Customer/List']//p[contains(text(),'Customers')]")
+    WebElement CustomerSubmenuItem;
+
 
     //action methods
-    public void setTxtEmail (String email) {
-        txtEmail.clear();
-        txtEmail.sendKeys(email);
+    public void clickCustomerHamburgerMenu () {
+        CustomerHamburgerMenu.click();
     }
-    public void setTxtPassword (String password) {
-        txtPassword.clear();
-        txtPassword.sendKeys(password);
-    }
-    public void clickLoginBtn () {
-        btnLogin.click();
-    }
-    public void clickLogoutBtn () throws InterruptedException {
-        Thread.sleep(2000);
-        btnLogout.click();
+    public void clickCustomerSubmenuItem () {
+        CustomerSubmenuItem.click();
     }
 }

@@ -19,6 +19,8 @@ public class LoginPage extends BasePage {
     WebElement btnLogin;
     @FindBy(linkText = "Logout")
     WebElement btnLogout;
+    @FindBy(xpath = "//div[@class='message-error validation-summary-errors']")
+    WebElement InvalidLoginMsg;
 
     //action methods
     public void setTxtEmail (String email) {
@@ -32,8 +34,10 @@ public class LoginPage extends BasePage {
     public void clickLoginBtn () {
         btnLogin.click();
     }
-    public void clickLogoutBtn () throws InterruptedException {
-        Thread.sleep(2000);
+    public void clickLogoutBtn () {
         btnLogout.click();
+    }
+    public String getInvalidLoginMsg() {
+        return InvalidLoginMsg.getText().replace("\n", " ").trim();
     }
 }

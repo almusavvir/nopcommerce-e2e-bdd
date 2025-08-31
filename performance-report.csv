@@ -42,3 +42,14 @@ sdk:cli:on-bootstrap|0.17339998483657837
 sdk:o11y:sync|12.62
 sdk:driver:post-initialization|2.9
 sdk:automate:session-annotation|11.66
+sdk:cli:o11ySync|9.836999982595444
+sdk:driver:quit|12.923500001430511
+sdk:automate:idle-timeout|1424.3931000232697
+sdk:automate:hub-management|1666.0282000005245
+sdk:driver:pre-initialization|713.81
+sdk:driver:get|714.32
+sdk:setup|3314.365299999714
+sdk:cli:on-bootstrap|0.16990000009536743
+sdk:o11y:sync|11.90320000052452
+sdk:driver:post-initialization|3.63960000872612
+sdk:automate:session-annotation|10.75

@@ -1,4 +1,4 @@
-@customer
+@wip
 Feature: CustomerAddE2E
 
     Backgroud:
@@ -10,15 +10,14 @@ Feature: CustomerAddE2E
      And User clicks on Customer submenu item
 
     @functional @e2e @regression
-    Scenario: Sucessful addition of new customer through admin Dashboard
+    Scenario: Successful addition of new customer through admin Dashboard
      And User click on Add New Customer button
      And User fills out customer details
      And Clicks Submit button
      Then Added customer should reflect in customer list
 
-    @functional @regression
-    Scenario: Sucessful addition of new customer through admin Dashboard with Save and Edit option
+    @functional @regression @wip
+    Scenario: Successful addition of new customer through admin Dashboard with Save and Edit option
      And User click on Add New Customer button
      And User fills out customer details
      And Clicks Submit and Edit button
-     Then 

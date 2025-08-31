@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -57,8 +58,20 @@ public class LoginStepDefinitions {
         }
     }
 
+    @Then("user should see error message {string}")
+    public void user_should_see_error_message(String expectedLoginMsg) {
+        String actualMessage = lp.getInvalidLoginMsg();
+        if (actualMessage.equals(expectedLoginMsg)) {
+            Assert.assertTrue(true); // pass
+        } else {
+            Assert.assertTrue(false);
+            driver.quit();
+        }
+    }
+
     @When("User clicks on Logout link")
     public void user_clicks_on_logout_link() throws InterruptedException, SocketException {
+        Thread.sleep(2000);
         lp.clickLogoutBtn();
     }
 
@@ -66,5 +79,16 @@ public class LoginStepDefinitions {
     public void close_browser() {
         //driver.close();
         driver.quit();
+    }
+
+    @Then("user should see error message:")
+    public void userShouldSeeErrorMessage(String expectedLoginMsg) {
+        String actualMessage = lp.getInvalidLoginMsg();
+        if (actualMessage.equals(expectedLoginMsg)) {
+            Assert.assertTrue(true); // pass
+        } else {
+            Assert.assertTrue(false);
+            driver.quit();
+        }
     }
 }

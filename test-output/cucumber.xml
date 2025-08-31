@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuite name="Cucumber" time="20.072" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-08-30T06:55:31.231120200Z">
+<testcase classname="Login" name="Successful Login with Valid Credentials" time="9.694">
+<system-out><![CDATA[
+Given User launches Chrome browser..........................................passed
+When user opens URL "https://admin-demo.nopcommerce.com/login"..............passed
+And user enters Email as "admin@yourstore.com" and Password as "admin"......passed
+And Clicks on Login.........................................................passed
+Then Page Title should be "Dashboard / nopCommerce administration"..........passed
+When User clicks on Logout link.............................................passed
+Then Page Title should be "nopCommerce demo store. Login"...................passed
+And Close Browser...........................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login" name="Unsuccessful Login with invalid Credentials" time="2.855">
+<system-out><![CDATA[
+Given User launches Chrome browser..........................................passed
+When user opens URL "https://admin-demo.nopcommerce.com/login"..............passed
+And user enters Email as "123123admin@yourstore.com" and Password as "adminkjhljh".passed
+And Clicks on Login.........................................................passed
+Then user should see error message "Login was unsuccessful. Please correct the errors and try again. No customer account found".passed
+And Close Browser...........................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login" name="Successful Login with Valid Credentials - #1.1" time="7.424">
+<system-out><![CDATA[
+Given User launches Chrome browser..........................................passed
+When user opens URL "https://admin-demo.nopcommerce.com/login"..............passed
+And user enters Email as "admin@yourstore.com" and Password as "admin"......passed
+And Clicks on Login.........................................................passed
+Then Page Title should be "Dashboard / nopCommerce administration"..........passed
+When User clicks on Logout link.............................................passed
+Then Page Title should be "nopCommerce demo store. Login"...................passed
+And Close Browser...........................................................passed
+]]></system-out>
+</testcase>
+</testsuite>

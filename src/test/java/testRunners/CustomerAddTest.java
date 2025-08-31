@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = ".//src//test//resources//features",
         glue = {"stepDefinitions"},
-        dryRun = true,
+        dryRun = false,
         monochrome = true,
         tags = "@customer",
         plugin = {"pretty", "json:target/cucumber.json", "junit:target/cucumber.xml"}

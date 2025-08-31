@@ -11,7 +11,7 @@ public class DashboardPage extends BasePage {
     public DashboardPage(WebDriver driver) { super(driver);}
 
     //locators
-    @FindBy (xpath = "//body/div[@class='wrapper']/aside[@class='main-sidebar sidebar-dark-primary elevation-4']/div[@class='sidebar']/nav[@class='mt-2']/ul[@role='menu']/li[@class='nav-item has-treeview menu-open']/a[1]")
+    @FindBy (xpath = "//a[@href='#']//p[contains(text(),'Customers')]")
     WebElement CustomerHamburgerMenu;
     @FindBy (xpath = "//a[@href='/Admin/Customer/List']//p[contains(text(),'Customers')]")
     WebElement CustomerSubmenuItem;

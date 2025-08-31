@@ -4,8 +4,6 @@ while (Get-Process -Name "java" -ErrorAction SilentlyContinue) {
     Start-Sleep -Seconds 2
 }
 
-$reportPath = "..\test-output\CucumberReports\report1.html"
+Set-Location .\test-output\
 
-if (Test-Path $reportPath) {
-    Start-Process $reportPath
-}
+allure serve

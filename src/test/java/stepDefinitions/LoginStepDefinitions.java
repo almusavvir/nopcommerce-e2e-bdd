@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.junit.Assert;
+import pageObjects.DashboardPage;
 import pageObjects.LoginPage;
 
 import java.net.SocketException;
@@ -16,6 +17,8 @@ public class LoginStepDefinitions {
 
     public WebDriver driver;
     public LoginPage lp;
+    public DashboardPage dp;
+
 
     @Given("User launches Chrome browser")
     public void user_launches_chrome_browser() {
@@ -91,4 +94,18 @@ public class LoginStepDefinitions {
             driver.quit();
         }
     }
+
+    @Given("User clicks on Customer hamburger menu")
+    public void user_clicks_on_customer_hamburger_menu() {
+        dp = new DashboardPage(driver);
+        dp.clickCustomerHamburgerMenu();
+    }
+
+    @Given("User clicks on Customer submenu item")
+    public void user_clicks_on_customer_submenu_item() throws InterruptedException {
+        dp = new DashboardPage(driver);
+        Thread.sleep(2000);
+        dp.clickCustomerSubmenuItem();
+    }
+
 }

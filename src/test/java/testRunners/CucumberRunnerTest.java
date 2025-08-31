@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
         monochrome = true,
         tags = "@smoke or @sanity",
         //plugin = {"pretty" , "html:test-output/CucumberReports/reports1.html"}
-        plugin = {"pretty", "json:test-output/cucumber.json", "junit:test-output/cucumber.xml"}
+        plugin = {"pretty", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"}
 
 )
 public class CucumberRunnerTest {
